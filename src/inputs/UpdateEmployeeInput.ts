@@ -3,25 +3,26 @@ import { InputType, Field } from "type-graphql";
 @InputType()
 export class UpdateEmployeeInput {
  
-  @Field({ nullable: true })
-  Name?: string;
+  @Field({nullable:true})
+  name: string;
 
-  @Field({ nullable: true })
-  Employee_Id?: string;
+  @Field({nullable:true})
+  code: string;
 
-  @Field({ nullable: true })
-  Email?: string;
+  @Field({nullable:true})
+  email: string;
 
-  @Field({ nullable: true })
-  Moblie_Number?: string;
+  @Field({nullable:true})
+  mobileNo: string;
 
-  @Field({ nullable: true })
-  Department?: string;
+  @Field({nullable:true})
+  department: string;
 
-  @Field({ nullable: true })
-  Role?: string;
+  @Field({nullable:true})
+  role: string;
 
-  @Field({ nullable: true })
-  Joining_Date?: string;
+  @Field({nullable:true})
+  
+  joinedDate: string
 
 }

@@ -14,7 +14,6 @@ export class CreateEmployeeInput {
   email: string;
 
   @Field({nullable:true})
-  
   mobileNo: string;
 
   @Field({nullable:true})
@@ -24,7 +23,6 @@ export class CreateEmployeeInput {
   role: string;
 
   @Field({nullable:true})
-  
   joinedDate: string
 
   }

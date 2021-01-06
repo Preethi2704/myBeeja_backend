@@ -23,7 +23,7 @@ export class EmployeeDetails extends BaseEntity {
 
   @Field({nullable:true})
   @Column({nullable:true, type: 'varchar'})
-  moblieNo: string 
+  mobileNo: string 
 
   @Field({nullable:true})
   @Column({nullable:true, type: 'varchar'})
