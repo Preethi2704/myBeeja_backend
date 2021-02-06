@@ -22,8 +22,5 @@ export class UserAdminResolver {
     await user.save();
     return user;
   }
-
-  
- 
   
 }

@@ -28,12 +28,24 @@ export class EmployeeResolver {
   @Mutation(() => EmployeeDetails)
   async updateEmployee(@Arg("id") id: string, @Arg("data") data: UpdateEmployeeInput) {
     const employee = await EmployeeDetails.findOne({ where: { id } });
+     console.log(employee);
     if (!employee) throw new Error("Employee not found!");
-    Object.assign(employee, data);
-    await employee.save();
+    let tempObj:any = {}
+    Object.assign(tempObj,data);
+    console.log("tempObj",tempObj);
+    let finalObj: any = {}
+    Object.keys(tempObj).forEach((key: string)=>{
+      let val = tempObj[key];
+      if(val!=null && val!='' && val.trim()!= ''){
+        finalObj[key]=val;
+      }
+    });
+    console.log("Final",finalObj);
+    Object.assign(employee,finalObj)    
+     await employee.save();
     return employee;
   }
-
+  
   @Mutation(() => EmployeeDetails)
   async deleteEmployee(@Arg("id") id: string) {
     const employee = await EmployeeDetails.findOne({ where: { id } });
